@@ -24,7 +24,7 @@ namespace RefactoringToPatterns.ComposeMethod
 
             if(IsExceedingCapacity())
             {
-                _elements = IncrementBy();
+                _elements = Increment();
             }
 
             _elements[_size++] = element;
@@ -35,7 +35,7 @@ namespace RefactoringToPatterns.ComposeMethod
             return _size + 1 > _elements.Length;
         }
 
-        private object[] IncrementBy()
+        private object[] Increment()
         {
             Object[] newElements = new Object[_elements.Length + 10];
 
