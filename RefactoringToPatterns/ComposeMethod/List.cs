@@ -35,9 +35,14 @@ namespace RefactoringToPatterns.ComposeMethod
         {
             Object[] newElements = new Object[_elements.Length + increment];
 
+            CloneArray(newElements);
+            return newElements;
+        }
+
+        private void CloneArray(object[] newElements)
+        {
             for (int i = 0; i < _size; i++)
                 newElements[i] = _elements[i];
-            return newElements;
         }
 
         public object[] Elements()
