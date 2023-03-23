@@ -22,12 +22,17 @@ namespace RefactoringToPatterns.ComposeMethod
         {
             if (_readOnly) return;
 
-            if(_size + 1 > _elements.Length)
+            if(IsExceedingCapacity())
             {
                 _elements = IncrementBy(10);
             }
 
             _elements[_size++] = element;
+        }
+
+        private bool IsExceedingCapacity()
+        {
+            return _size + 1 > _elements.Length;
         }
 
         private object[] IncrementBy(int increment)
