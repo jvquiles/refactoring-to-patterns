@@ -18,17 +18,16 @@ namespace RefactoringToPatterns.ComposeMethod
             _elements = new Object[_size];
         }
 
-        public void Add(Object element) {
-            if(!_readOnly) {
-                int newSize = _size + 1;
+        public void Add(Object element)
+        {
+            if (_readOnly) return;
 
-                if(newSize > _elements.Length)
-                {
-                    _elements = IncrementBy(10);
-                }
-
-                _elements[_size++] = element;
+            if(_size + 1 > _elements.Length)
+            {
+                _elements = IncrementBy(10);
             }
+
+            _elements[_size++] = element;
         }
 
         private object[] IncrementBy(int increment)
