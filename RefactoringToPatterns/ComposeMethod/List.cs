@@ -24,9 +24,7 @@ namespace RefactoringToPatterns.ComposeMethod
 
                 if(newSize > _elements.Length)
                 {
-                    var newElements = CloneBiggerArray();
-
-                    _elements = newElements;
+                    _elements = CloneBiggerArray();
                 }
 
                 _elements[_size++] = element;
