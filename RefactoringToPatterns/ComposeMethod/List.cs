@@ -24,16 +24,16 @@ namespace RefactoringToPatterns.ComposeMethod
 
                 if(newSize > _elements.Length)
                 {
-                    _elements = CloneBiggerArray();
+                    _elements = IncrementBy(10);
                 }
 
                 _elements[_size++] = element;
             }
         }
 
-        private object[] CloneBiggerArray()
+        private object[] IncrementBy(int increment)
         {
-            Object[] newElements = new Object[_elements.Length + 10];
+            Object[] newElements = new Object[_elements.Length + increment];
 
             for (int i = 0; i < _size; i++)
                 newElements[i] = _elements[i];
