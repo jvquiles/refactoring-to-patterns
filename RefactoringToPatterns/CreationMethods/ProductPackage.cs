@@ -42,7 +42,7 @@ namespace RefactoringToPatterns.CreationMethods
 
         public static ProductPackage CreateInternetAndMobileAndTVPackage(string internetLabel, int mobileNumber, string[] tvChannels)
         {
-            throw new System.NotImplementedException();
+            return new ProductPackage(internetLabel, null, tvChannels, mobileNumber);
         }
 
         public bool HasInternet()
