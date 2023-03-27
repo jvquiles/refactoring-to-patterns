@@ -47,7 +47,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
         [Fact]
         public void CreateWithInternetAndMobile()
         {
-            var productPackage = ProductPackage.CreateInternetAndMobilePackage();
+            var productPackage = ProductPackage.CreateInternetAndMobilePackage("100MB", 666123456);
             
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasMobile());
