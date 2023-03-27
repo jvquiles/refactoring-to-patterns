@@ -7,7 +7,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
         [Fact]
         public void CreateAProductPackageWithOnlyInternet()
         {
-            var productPackage = new ProductPackage("100MB");
+            var productPackage = ProductPackage.CreateInternetPackage("100MB");
 
             Assert.True(productPackage.HasInternet());
             Assert.False(productPackage.HasVOIP());
@@ -17,7 +17,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
         [Fact]
         public void CreateWithInternetAndVoip()
         {
-            var productPackage = new ProductPackage("100MB", 91233788);
+            var productPackage = ProductPackage.CreateInternetAndTelephonePackage("100MB", 91233788);
 
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasVOIP());
@@ -27,7 +27,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
         [Fact]
         public void CreateWithInternetAndTv()
         {
-            var productPackage = new ProductPackage("100MB", new[] {"LaLiga", "Estrenos"});
+            var productPackage = ProductPackage.CreateInternetAndTVPackage("100MB", new[] {"LaLiga", "Estrenos"});
 
             Assert.True(productPackage.HasInternet());
             Assert.False(productPackage.HasVOIP());
@@ -37,7 +37,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
         [Fact]
         public void CreateWithInternetVoipAndTv()
         {
-            var productPackage = new ProductPackage("100MB", 91233788, new[] {"LaLiga", "Estrenos"});
+            var productPackage = ProductPackage.CreateInternetAndTelephoneAndTVPackage("100MB", 91233788, new[] {"LaLiga", "Estrenos"});
 
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasVOIP());
