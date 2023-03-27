@@ -40,11 +40,15 @@ namespace RefactoringToPatterns.CreationMethods
             return new ProductPackage(internetLabel, null, null, mobileNumber);
         }
 
+        public static ProductPackage CreateInternetAndMobileAndTVPackage(string internetLabel, int mobileNumber, string[] tvChannels)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool HasInternet()
         {
             return _internetLabel != null;
         }
-
 
         public bool HasVOIP()
         {
