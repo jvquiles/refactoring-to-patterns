@@ -33,6 +33,11 @@ namespace RefactoringToPatterns.CreationMethods
             return new ProductPackage(internetLabel, telephoneNumber, tvChannels);
         }
 
+        public static ProductPackage CreateInternetAndMobilePackage()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool HasInternet()
         {
             return _internetLabel != null;
@@ -47,6 +52,11 @@ namespace RefactoringToPatterns.CreationMethods
         public bool HasTv()
         {
             return _tvChannels != null;
+        }
+
+        public bool HasMobile()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
